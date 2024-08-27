@@ -5,6 +5,7 @@ import Start from './pages/authorization/Start';
 import StaffLogin from './pages/authorization/StaffLogin';
 import FamilyLogin from './pages/authorization/FamilyLogin';
 import Dashboard from './pages/nurse/Dashboard';
+import PatientProfile from './pages/nurse/PatientProfile';
 import { useFonts } from 'expo-font';
 
 const Stack = createNativeStackNavigator();
@@ -31,6 +32,7 @@ const App = () => {
 
         {/* Nurses View */}
         <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="PatientProfile" component={PatientProfile} />
 
         {/* Family View */}
       </Stack.Navigator>

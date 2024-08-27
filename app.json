@@ -22,21 +22,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "expo": {
-    "plugins": [
-      [
-        "expo-firebase-core",
-        {
-          "apiKey": "AIzaSyCAtpYlHeUZm0wlSNEtvlDwh0XmukzPWqw",
-  "authDomain": "triniti-6dea8.firebaseapp.com",
-  "projectId": "triniti-6dea8",
-  "storageBucket": "triniti-6dea8.appspot.com",
-  "messagingSenderId": "113357896992",
-  "appId": "1:113357896992:web:fac795d43d8e04e541ab45"
-        }
-      ]
-    ]
-  }
+    }
   }
 }
