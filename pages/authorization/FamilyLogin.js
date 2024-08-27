@@ -14,7 +14,6 @@ const FamilyLogin = () => {
   const navigation = useNavigation();
 
   const handleLogin = () => {
-    // send user to "dashboard" for family
     navigation.navigate('FamPatientProfile');
   };
 

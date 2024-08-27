@@ -1,7 +1,9 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, Image, StyleSheet } from 'react-native';
+import { Image } from 'expo-image';
+import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 
 const PatientButton = ({ onPress, patientName, image }) => {
+  console.log(image);
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <View style={styles.topSection}>
@@ -33,7 +35,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     borderTopLeftRadius: 12,
-    borderTopRightRadius: 12
+    borderTopRightRadius: 12,
+    resizeMode: 'cover'
   },
   topSection: {
     flex: 1,

@@ -28,8 +28,11 @@ const App = () => {
         <Stack.Screen name="Start" component={Start} />
         <Stack.Screen name="StaffLogin" component={StaffLogin} />
         <Stack.Screen name="FamilyLogin" component={FamilyLogin} />
-        {/* <Stack.Screen name="Login" component={Login} /> */}
+
+        {/* Nurses View */}
         <Stack.Screen name="Dashboard" component={Dashboard} />
+
+        {/* Family View */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView, StyleSheet, TextInput } from 'react-native';
-import DashboardHeader from '../../components/DashboardHeader';
+import Header from '../../components/Header';
 import PatientButton from '../../components/PatientButton';
 import { useNavigation } from '@react-navigation/native';
 import { db } from '../../Firebase';
@@ -13,13 +13,13 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchPatients = async () => {
+      console.log('hi');
       const querySnapshot = await getDocs(collection(db, 'users'));
       const patientList = querySnapshot.docs.map((doc) => ({
         name: doc.data().name,
         image: doc.data().image
       }));
       setPatients(patientList);
-      console.log(patientList);
     };
 
     fetchPatients();
@@ -40,7 +40,11 @@ const Dashboard = () => {
 
   return (
     <View style={styles.container}>
-      <DashboardHeader />
+      <Header
+        headerName={'Dashboard'}
+        leftIconName={'grid'}
+        rightIconName={'person-circle-outline'}
+      />
       <View style={styles.patientContainerShadow}>
         <View style={styles.patientContainer}>
           <ScrollView contentContainerStyle={styles.patientsScrollContainer}>
