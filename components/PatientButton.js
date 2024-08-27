@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'expo-image';
 import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
+import { Color } from '../GlobalStyles';
 
 const PatientButton = ({ onPress, patientName, image }) => {
   console.log(image);

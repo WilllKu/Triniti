@@ -5,6 +5,7 @@ import PatientButton from '../../components/PatientButton';
 import { useNavigation } from '@react-navigation/native';
 import { db } from '../../Firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import { Color } from '../../GlobalStyles';
 
 const Dashboard = () => {
   const navigation = useNavigation();
@@ -75,7 +76,7 @@ const Dashboard = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#2f6be4',
+    backgroundColor: Color.blue,
     flex: 1
   },
   patientContainerShadow: {
@@ -88,11 +89,12 @@ const styles = StyleSheet.create({
   },
   patientContainer: {
     borderRadius: 45,
+    height: '100%',
     overflow: 'hidden'
   },
   searchBar: {
     height: 40,
-    width: 325,
+    width: 372,
     marginTop: 40,
     marginBottom: 16,
     borderWidth: 1.2,

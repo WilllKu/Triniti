@@ -2,6 +2,7 @@ import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Color, FontFamily } from '../GlobalStyles';
 
 const Header = ({ headerName, leftIconName, rightIconName }) => {
   const navigation = useNavigation();
@@ -33,8 +34,8 @@ const Header = ({ headerName, leftIconName, rightIconName }) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: '#2f6be4',
-    height: 143,
+    backgroundColor: Color.blue,
+    height: '18%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -42,19 +43,19 @@ const styles = StyleSheet.create({
   },
 
   headerTitle: {
-    color: 'white',
-    fontSize: 30,
+    fontSize: 34,
+    fontFamily: FontFamily.nunitoBold,
+    color: Color.colorWhite,
     fontWeight: 'bold',
-    top: 25
+    top: '7%'
   },
-
   leftIcon: {
-    left: 15,
-    top: 25
+    left: '60%',
+    top: '18%'
   },
   rightIcon: {
-    right: 15,
-    top: 25
+    right: '60%',
+    top: '18%'
   }
 });
 

@@ -15,7 +15,8 @@ export const Color = {
   colorWhite: '#fff',
   colorBlack: '#000',
   minorText: 'rgba(0, 0, 0, 0.5)',
-  colorBlack: '#000'
+  colorBlack: '#000',
+  blue: '#2f6be4'
 };
 /* border radiuses */
 export const Border = {
