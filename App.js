@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Start from './pages/authorization/Start';
+import StaffLogin from './pages/authorization/StaffLogin';
+import FamilyLogin from './pages/authorization/FamilyLogin';
+import Dashboard from './pages/nurse/Dashboard';
+import { useFonts } from 'expo-font';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
+  const [fontsLoaded, error] = useFonts({
+    'Nunito-Regular': require('./assets/fonts/Nunito-Regular.ttf'),
+    'Nunito-Medium': require('./assets/fonts/Nunito-Medium.ttf'),
+    'Nunito-Bold': require('./assets/fonts/Nunito-Bold.ttf')
+  });
+
+  if (!fontsLoaded && !error) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Start"
+        screenOptions={{ headerShown: false, animation: 'fade' }}>
+        <Stack.Screen name="Start" component={Start} />
+        <Stack.Screen name="StaffLogin" component={StaffLogin} />
+        <Stack.Screen name="FamilyLogin" component={FamilyLogin} />
+        {/* <Stack.Screen name="Login" component={Login} /> */}
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
